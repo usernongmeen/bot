@@ -61,7 +61,7 @@ def reply(replyToken, textList):
     msgs = []
     for text in textList:
         msgs.append({
-            "type":"image",
+            "type":"text",
             "originalContentUrl":text
         })
     data = json.dumps({
