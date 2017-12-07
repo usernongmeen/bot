@@ -40,7 +40,7 @@ def bot():
         reply(replyToken, ['Only text is allowed.'])
         return 'OK',200
     
-    text = replyToken #msg_in_json.lower().strip()
+    text = msg_in_json["events"][0]["message"]["id"].lower().strip()
 
     # ตอบข้อความ "นี่คือรูปแบบข้อความที่รับส่ง" กลับไป
     replyStack.append('นี่คือรูปแบบข้อความที่รับส่ง')
@@ -61,7 +61,7 @@ def reply(replyToken, textList):
     msgs = []
     for text in textList:
         msgs.append({
-            "type":"text",
+            "type":"image",
             "text":text
         })
     data = json.dumps({
