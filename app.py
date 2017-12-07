@@ -49,7 +49,7 @@ def bot():
     #replyStack.append(msg_in_string)
     replyStack.append('เราได้รับรูปภาพของคุณแล้ว')
     replyStack.append('ขอบคุณครับ')
-    replyStack.append('\uDBC0\uDC84 LINE emoji')
+    #replyStack.append('\uDBC0\uDC84 LINE emoji')
     reply(replyToken, replyStack[:5])
     
     return 'OK', 200
