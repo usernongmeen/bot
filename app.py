@@ -37,10 +37,10 @@ def bot():
     #text = msg_in_json["events"][0]['message']['text'].lower().strip()
     
     if msgType != 'image':
-        reply(replyToken, ['Only text is allowed.'])
+        reply(replyToken, ['ส่งเป็นรูปภาพเท่านั้น ขอบคุณครับ'])
         return 'OK',200
     
-    text = msg_in_json["events"][0]["message"]["id"].lower().strip()
+    text = msg_in_json["events"][0]['message']['id'].lower().strip()
 
     # ตอบข้อความ "นี่คือรูปแบบข้อความที่รับส่ง" กลับไป
     replyStack.append('นี่คือรูปแบบข้อความที่รับส่ง')
@@ -61,7 +61,7 @@ def reply(replyToken, textList):
     msgs = []
     for text in textList:
         msgs.append({
-            "type":"image",
+            "type":"text",
             "text":text
         })
     data = json.dumps({
