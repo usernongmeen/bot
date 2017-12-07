@@ -48,8 +48,7 @@ def bot():
     # ทดลอง Echo ข้อความกลับไปในรูปแบบที่ส่งไปมา (แบบ json)
     #replyStack.append(msg_in_string)
     replyStack.append('เราได้รับรูปภาพของคุณแล้ว')
-    replyStack.append('ขอบคุณครับ')
-    replyStack.append('\uDBC0\uDC84 LINE emoji')
+    replyStack.append('ขอบคุณครับ \0x1000AE')
     reply(replyToken, replyStack[:5])
     
     return 'OK', 200
