@@ -40,7 +40,7 @@ def bot():
         reply(replyToken, ['Only text is allowed.'])
         return 'OK',200
     
-    text = replyToken 'msg_in_json.lower().strip()
+    text = replyToken #msg_in_json.lower().strip()
 
     # ตอบข้อความ "นี่คือรูปแบบข้อความที่รับส่ง" กลับไป
     replyStack.append('นี่คือรูปแบบข้อความที่รับส่ง')
