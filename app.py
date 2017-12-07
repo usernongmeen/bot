@@ -40,14 +40,16 @@ def bot():
         reply(replyToken, ['ส่งเป็นรูปภาพเท่านั้น ขอบคุณครับ'])
         return 'OK',200
     
-    text = msg_in_json["events"][0]["message"]["id"].lower().strip()
+    text = msg_in_json["events"][0]['message']['text'].lower().strip()
 
     # ตอบข้อความ "นี่คือรูปแบบข้อความที่รับส่ง" กลับไป
     #replyStack.append('นี่คือรูปแบบข้อความที่รับส่ง')
     
     # ทดลอง Echo ข้อความกลับไปในรูปแบบที่ส่งไปมา (แบบ json)
     #replyStack.append(msg_in_string)
-    replyStack.append(text)
+    replyStack.append('เราได้รับรูปภาพของคุณแล้ว')
+    replyStack.append('ขอบคุณครับ')
+    replyStack.append('\uDBC0\uDC84 LINE emoji')
     reply(replyToken, replyStack[:5])
     
     return 'OK', 200
@@ -62,8 +64,8 @@ def reply(replyToken, textList):
     msgs = []
     for text in textList:
         msgs.append({
-            "type":"image",
-            "id":text
+            "type":"text",
+            "text":text
         })
     data = json.dumps({
         "replyToken":replyToken,
