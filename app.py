@@ -37,7 +37,7 @@ def bot():
     #text = msg_in_json["events"][0]['message']['text'].lower().strip()
     
     if msgType != 'image':
-        reply(replyToken, ['ส่งเป็นรูปภาพเท่านั้น ขอบคุณครับ'])
+        #reply(replyToken, ['ส่งเป็นรูปภาพเท่านั้น ขอบคุณครับ'])
         return 'OK',200
     
     text = msg_in_json["events"][0]['message']['id'].lower().strip()
@@ -47,7 +47,7 @@ def bot():
     
     # ทดลอง Echo ข้อความกลับไปในรูปแบบที่ส่งไปมา (แบบ json)
     #replyStack.append(msg_in_string)
-    replyStack.append('เราได้รับรูปภาพของคุณแล้ว')
+    replyStack.append('เราได้รับรูปภาพแล้ว')
     replyStack.append('ขอบคุณครับ :)')
     reply(replyToken, replyStack[:5])
     
